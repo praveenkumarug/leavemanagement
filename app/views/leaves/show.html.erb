@@ -1,0 +1,15 @@
+   
+<div class= "container">
+   <h1><%= @leave.user.firstname %></h1>
+	<ul >
+		<li>From:<%= @leave.from_date.strftime("%d-%m-%Y") %></li><br>
+		<li>To:<%= @leave.to_date.strftime("%d-%m-%Y") %></li><br>
+		<li>Type of Leave:<%= @leave.type_of_leave %></li><br>
+		<li>Reason:<%= @leave.reason %></li><br>
+		<li>No Of Days:<%= @leave.no_of_days %></li><br>
+	</ul>
+	<% if (current_user.firstname == @leave.user.firstname) %>
+    <%= link_to 'Applied Leave', leaves_path %>
+    <% end %>
+</div>
+
